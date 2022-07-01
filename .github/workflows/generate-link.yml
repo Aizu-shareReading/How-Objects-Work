@@ -15,9 +15,8 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Generate markdown link
-      working-directory: ./docs
       run: |
-        # TODO: 書く
+        ./index.sh > _sidebar.md
 
     - name: Push
       run: |
