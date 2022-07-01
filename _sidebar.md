@@ -1,6 +1,0 @@
-- section01
-  - [naoya](section01/naoya.md)
-- section02
-  - [ERASER](section02/ERASER.md)
-  - [matumoto](section02/matumoto.md)
-  - [Naoya](section02/Naoya.md)
