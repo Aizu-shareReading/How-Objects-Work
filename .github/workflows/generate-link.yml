@@ -1,0 +1,29 @@
+name: Generate markdown link
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - main
+
+jobs:
+  Generate-Markdown-Link:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Generate markdown link
+      working-directory: ./docs
+      run: |
+        # TODO: 書く
+
+    - name: Push
+      run: |
+        git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+        git config --global user.name "${GITHUB_ACTOR}"
+        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git add docs/README.md
+        git commit -m "Generate markdown link"
+        git push origin HEAD:${GITHUB_REF}
